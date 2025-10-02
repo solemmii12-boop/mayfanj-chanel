@@ -1,145 +1,141 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <marquee behavior= "scroll" direction"left">selamat datang di web saya, terima kasih sudah berkunjung</marquee>
-  </head>
-  <body>
-      <h1 class="title">Hello World! </h1>
-      <p id="currentTime"></p>
-      <script src="script.js"></script>
-  </body>
-</html><!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profil Diri Saya - Cantik dan Menarik">
-    <title>Profil Diri Saya</title>
-    <style>
-        /* Pengaturan Umum */
-        body {
-                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #fbb6d0, #f7aef8); /* Warna gradien pink cantik */
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Saya</title>
 
-        /* Header */
-        header {
-            background: #ff5a8b;
-            color: white;
-            text-align: center;
-            padding: 50px 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-            font-family: 'Cursive', sans-serif;
-            letter-spacing: 2px;
-        }
+  <!-- Font Awesome untuk ikon sosmed -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-        /* Profile Section */
-        .profile-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-            flex-direction: column;
-            text-align: center;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: #fff7f0;
+      color: #333;
+    }
 
-        .profile-section img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            border: 6px solid #ff5a8b;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
+    /* Teks Berjalan */
+    .marquee {
+      background: #ffb6b9;
+      color: white;
+      padding: 12px 0;
+      font-size: 1.1em;
+      font-weight: 600;
+      overflow: hidden;
+    }
 
-        .profile-section h2 {
-            font-size: 36px;
-            color: #ff5a8b;
-            margin-top: 20px;
-            font-family: 'Cursive', sans-serif;
-        }
+    .marquee span {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll 12s linear infinite;
+      padding-left: 100%;
+    }
 
-        .bio p {
-            font-size: 20px;
-            color: #555;
-            max-width: 800px;
-            margin: 20px auto;
-            line-height: 1.8;
-        }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
-        /* Social Media Section */
-        .social-links {
-            margin-top: 30px;
-        }
+    /* Kontainer Profil */
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-        .social-links a {
-            text-decoration: none;
-            color: #fff;
-            background: #ff5a8b;
-            padding: 12px 20px;
-            margin: 0 10px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ffb6b9;
+      margin-bottom: 15px;
+    }
 
-        .social-links a:hover {
-            background: #ff80b5;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+    h1 {
+      font-size: 26px;
+      margin: 10px 0;
+      color: #444;
+    }
 
-        /* Footer */
-        footer {
-            background: #ff5a8b;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 14px;
-        }
+    p.bio {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 25px;
+      padding: 0 20px;
+    }
 
-        footer p {
-            margin: 0;
-        }
-    </style>
+    /* Link Sosial Media */
+    .social-links a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #ffb6b9;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fa7e85;
+      transform: scale(1.2);
+    }
+
+    .insta-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ffb6b9;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .insta-link:hover {
+      background: #fa7e85;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Profil Diri Saya</h1>
-</header>
+  <!-- Teks Berjalan -->
+  <div class="marquee">
+    <span>✨ Selamat datang di halaman profil saya! Yuk, kenalan lebih dekat ✨</span>
+  </div>
 
-<section class="profile-section">
-    <!-- Ganti dengan foto diri Anda -->
-    <img src="https://via.placeholder.com/200" alt="Foto Profil">
-    <h2>Nama Saya: mayvani lidya</h2>
-    <div class="bio">
-        <p>
-            Halo, saya [mayvani]. Saya seorang wanita yang penuh semangat dan kreatif, dengan kecintaan pada menggambar selalu menjadi minat dan bakat saya. 
-            Saya selalu berusaha untuk mencapai impian saya dan menikmati setiap proses dalam perjalanan hidup ini. 
-            Selain itu, saya juga senang berbagi pengetahuan dan bertemu dengan orang-orang yang positif dan inspiratif.
-        </p>
-        <p>
-            Di luar pekerjaan saya, saya suka melakukan aktivitas lain seperti menggambar, dan selalu mencari cara untuk terus berkembang dan belajar.
-        </p>
-    </div>
-    
+  <!-- Konten Profil -->
+  <div class="container">
+    <img class="profile-img" src="https://via.placeholder.com/150" alt="Foto Profil Anda">
+
+    <h1>mayvani lidya⭐˂͈</h1>
+    <p class="bio">Hai! Saya seorang kreator digital yang suka desain, teknologi, dan berbagi inspirasi. Terima kasih sudah berkunjung ke halaman saya 💖</p>
+
+    <!-- Ikon Sosmed -->
     <div class="social-links">
-        <a href="https://www.facebook.com/[link-facebook]" target="_blank">Facebook</a>
-        <a href="https://www.twitter.com/[link-twitter]" target="_blank">Twitter</a>
-        <a href="https://www.instagram.com/[link-instagram]" target="_blank">Instagram</a>
+      <a href="https://instagram.com/username" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/username" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/username" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
-</section>
 
-<footer>
-    <p>&copy; 2025 [mayvani]. Semua hak dilindungi.</p>
-</footer>
+    <!-- Tombol ke Instagram -->
+    <a class="insta-link" href="https://www.instagram.com/whoszvani?igsh=MWhtMXN0bmloYmg5bA==" target="_blank">🌸 Lihat Instagram Saya</a>
+  </div>
 
 </body>
 </html>
